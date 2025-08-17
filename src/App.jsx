@@ -7,6 +7,10 @@ import SelectedList from './components/SelectedList/SelectedList';
 import Footer from './components/Footer/Footer';
 import SubscribeSection from './components/SubscribeSection/SubscribeSection';
 
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const [money, setMoney] = useState(0);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
@@ -14,29 +18,32 @@ function App() {
 
   const handleAddMoney = () => {
     setMoney(17000000);
+    toast.success("💰 Free credit claimed successfully!");
   };
 
   const handleSelectPlayer = (player) => {
     const alreadySelected = selectedPlayers.find(p => p.name === player.name);
 
     if (alreadySelected) {
-      alert("Player already selected!");
+      toast.warning("⚠️ Player already selected!");
       return;
     }
 
     if (selectedPlayers.length >= 6) {
-      alert("You cannot select more than 6 players!");
+      toast.warning("⚠️ You cannot select more than 6 players!");
       return;
     }
 
     if (money < player.price) {
-      alert("Not enough coins!");
+      toast.warning("⚠️ Not enough money! Please claim free credit.");
       return;
     }
 
-    
     setSelectedPlayers([...selectedPlayers, player]);
     setMoney(money - player.price);
+
+  
+    toast.success(`🎉 Congratulations! You selected ${player.name}`);
   };
 
   const handleRemovePlayer = (playerName) => {
@@ -46,6 +53,7 @@ function App() {
     const updatedList = selectedPlayers.filter(p => p.name !== playerName);
     setSelectedPlayers(updatedList);
     setMoney(money + playerToRemove.price);  
+    toast.info(`ℹ️ ${playerName} has been removed.`);
   };
 
   return (
@@ -53,35 +61,30 @@ function App() {
     
       <Navbar money={money} handleAddMoney={handleAddMoney} />
 
-     
       <Selected
         selectedCount={selectedPlayers.length}
         showSelected={showSelected}
         setShowSelected={setShowSelected}
       />
 
-
-     <div className='mb-[200px]'>
+      <div className='mb-[200px]'>
         {showSelected ? (
-        <SelectedList
-          selectedPlayers={selectedPlayers}
-          handleRemovePlayer={handleRemovePlayer}
-          setShowSelected={setShowSelected}
-        />
-      ) : (
-        <Players handleSelectPlayer={handleSelectPlayer} />
-      )}
-     </div>
+          <SelectedList
+            selectedPlayers={selectedPlayers}
+            handleRemovePlayer={handleRemovePlayer}
+            setShowSelected={setShowSelected}
+          />
+        ) : (
+          <Players handleSelectPlayer={handleSelectPlayer} />
+        )}
+      </div>
       
-
       <SubscribeSection/>
-      
       <Footer/>
 
-      
+         <ToastContainer position="top-center" autoClose={3000} theme="colored" />
     </div>
   );
 }
 
 export default App;
-

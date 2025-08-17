@@ -33,6 +33,10 @@ const Footer = () => {
                 </div>
                </div>
             </div>
+
+
+            <hr className="mt-20"/>
+            <p className="text-center mt-10">@2024 Your Company All Rights Reserved.</p>
         </div>
     );
 };
