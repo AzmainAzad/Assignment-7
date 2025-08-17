@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Players from './components/Players/Players';
 import Selected from './components/Selected/Selected';
 import SelectedList from './components/SelectedList/SelectedList';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [money, setMoney] = useState(0);
@@ -67,6 +68,8 @@ function App() {
       ) : (
         <Players handleSelectPlayer={handleSelectPlayer} />
       )}
+
+      <Footer/>
     </div>
   );
 }
