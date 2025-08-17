@@ -1,18 +1,19 @@
 
 const Footer = () => {
     return (
-        <div className="bg-[#050f38] text-white p-20">
+        <div className="bg-[#050f38] text-white/60 p-20 pt-50">
             <div className="mb-10"> 
                 <img src="/images/logo-footer.png" alt="" className="m-auto" />
             </div>
             <div className="flex justify-around">
                <div className="w-[300px]">
-                <p className="mb-3">About US</p>
+                <p className="mb-3 text-xl font-bold text-white">About US</p>
                 <p>We are a passionate team dedicated to providing the best services to our customers.</p>
                </div>
 
                <div className="w-[300px]">
-                <p className="mb-3">Quick Links</p>
+                <p className="mb-3 text-xl font-bold text-white">About US</p>
+                <p className="mb-3 ">Quick Links</p>
                 <ul className="list-disc ml-5">
                     <a href=""><li>Home</li></a> 
                     <a href=""><li>Services</li></a> 
@@ -22,7 +23,8 @@ const Footer = () => {
                </div>
 
                <div className="w-[300px]">
-                <p className="mb-3">Subscribe</p>
+                <p className="mb-3 text-xl font-bold text-white">About US</p>
+                <p className="mb-3 ">Subscribe</p>
                 <p>Subscribe to our newsletter for the latest updates.</p>
                 <div className="flex mt-4">
                   <input type="email" placeholder="Enter your email"className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-black bg-[white]"/>

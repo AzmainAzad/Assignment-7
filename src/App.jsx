@@ -5,6 +5,7 @@ import Players from './components/Players/Players';
 import Selected from './components/Selected/Selected';
 import SelectedList from './components/SelectedList/SelectedList';
 import Footer from './components/Footer/Footer';
+import SubscribeSection from './components/SubscribeSection/SubscribeSection';
 
 function App() {
   const [money, setMoney] = useState(0);
@@ -59,7 +60,9 @@ function App() {
         setShowSelected={setShowSelected}
       />
 
-      {showSelected ? (
+
+     <div className='mb-[200px]'>
+        {showSelected ? (
         <SelectedList
           selectedPlayers={selectedPlayers}
           handleRemovePlayer={handleRemovePlayer}
@@ -68,8 +71,14 @@ function App() {
       ) : (
         <Players handleSelectPlayer={handleSelectPlayer} />
       )}
+     </div>
+      
 
+      <SubscribeSection/>
+      
       <Footer/>
+
+      
     </div>
   );
 }
