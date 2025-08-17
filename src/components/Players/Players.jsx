@@ -6,7 +6,7 @@ const Players = ({ handleSelectPlayer }) => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-  fetch('/Players.json') 
+  fetch('/players.json') 
     .then((res) => res.json())
     .then((data) => setPlayers(data));
 }, []);
