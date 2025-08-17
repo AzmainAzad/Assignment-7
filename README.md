@@ -1,12 +1,25 @@
-# React + Vite
+Name of My Project: My Cricket Dream Team -- https://stellar-fenglisu-f6d878.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+A brief Description: This is a webpage where anyone can build his or her dream Cricket team with 6 Players.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Technologies Used:
+1. React.js 
+2. Vite 
+3. Tailwind CSS 
+4. React Toastify 
+5. Font Awesome 
+6. JavaScript (ES6+) 
+7. HTML5 & CSS3 
+8. Netlify 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+3 Key Features of my Project:
+
+1. Player Selection System: Users can select up to a maximum of 6 players. When a player is selected, coins are deducted from the balance, and a success message is shown using Toastify.
+
+2. Budget & Validation System: Players cannot be purchased unless the “Claim free credit” button is clicked. If the coins are insufficient or the user tries to select more than 6 players, a warning toast will appear.
+
+3. Dynamic Player Management: If a player is removed from the selected player list, the balance is refunded. Users can toggle between viewing available players and selected players.
